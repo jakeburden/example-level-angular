@@ -1,0 +1,38 @@
+<!doctype html>
+<script type="text/javascript" src="bundle.js"></script>
+<style>
+  .island {
+    max-width: 38em;
+    margin: 0 auto
+  }
+  .user {
+    display: block;
+    margin-bottom: 2em;
+    width: 100%;
+    position: relative;
+    font: 18px/1.4 sans-serif;
+  }
+
+  .user__name {
+    background: #333;
+    color: #fff;
+    padding: 6px 10px;
+  }
+</style>
+<body ng-app="BLAN">
+  <div ng-controller="usersController">
+    <div class="island" ng-repeat="user in users">
+      <div class="user">
+        <div class="user__name">
+          {{user.value.first_name +" "+ user.value.last_name}}
+        </div>
+        <div class="user__origin">
+          location: {{user.value.country}}
+        </div>
+        <div class="user__email">
+          email: {{user.value.email}}
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
